@@ -64,6 +64,9 @@ Clean code and testing:
 2. Unit testing: https://github.com/Tobichimaru/Python/blob/master/Testing.ipynb
 3. unittests framework doc: https://docs.python.org/3/library/unittest.html
 
+**Additional materials:**
+How dict works: https://habr.com/ru/post/247843/
+
 **Note**: Feel free to use different material regarding data types and structures in Python.
 
 tasks:
