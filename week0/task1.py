@@ -1,19 +1,18 @@
+import math
+
 class Solution(object):
     def judgeSquareSum(self, c):
-     a = 0
-     b = 0
-     g = 0
-     while a <= c:
-        for b in range(1, c):
-            if a ** 2 + b ** 2 == c:
-                g += 1
-                break
+        if c < 0:
+            raise ValueError("math domain error")
+        i = 0
+        max = math.sqrt(c)
+        while i <= max:
+            if math.sqrt(c - i ** 2) % 1 == 0:
+                return(True)
             else:
-                b = b + 1
-        if g == 1:
-            break
-        a += 1
-     return g != 0
+                i+=1
+        return(False)
+    
 if __name__ == "__main__":
-    n = int(input())
-    print(Solution().judgeSquareSum(n))
+n = int(input())
+print(Solution().judgeSquareSum(n))
