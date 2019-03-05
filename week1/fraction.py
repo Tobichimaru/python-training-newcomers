@@ -19,34 +19,23 @@ class Fraction:
         return firstnum == secondnum
 
     def __ge__(self, other):
-        firstnum = self.num * other.den
-        secondnum = other.num * self.den
-
-        return firstnum >= secondnum
+        return not self < other
 
     def __ne__(self, other):
-        firstnum = self.num * other.den
-        secondnum = other.num * self.den
-
-        return firstnum != secondnum
+        return not self == other
 
     def __lt__(self, other):
         firstnum = self.num * other.den
         secondnum = other.num * self.den
-
         return firstnum < secondnum
 
     def __gt__(self, other):
         firstnum = self.num * other.den
         secondnum = other.num * self.den
-
         return firstnum > secondnum
 
     def __le__(self, other):
-        firstnum = self.num * other.den
-        secondnum = other.num * self.den
-
-        return firstnum <= secondnum
+        return not self > other
 
 if __name__ == "__main__":
 
