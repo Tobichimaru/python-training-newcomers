@@ -27,7 +27,7 @@ class STree:
             else:
                 self.right.insert(node)
 
-class PreOrderIterator:
+"""class PreOrderIterator:
     def __init__(self, current):
         self._current = current
     def __iter__(self):
@@ -38,7 +38,7 @@ class PreOrderIterator:
         for node in self._current.left:
             yield node.key
         for node in self._current.right:
-            yield node.key
+            yield node.key"""
 
 class STree2:
     def __init__(self, value):
@@ -69,7 +69,7 @@ class STree2:
             else:
                 self.right.insert(node)
 
-class InOrderIterator():
+"""class InOrderIterator():
     def __init__(self, current):
         self._current = current
     def __iter__(self):
@@ -80,7 +80,7 @@ class InOrderIterator():
         for node in self._current.left:
             yield node.key
         for node in self._current.right:
-            yield node.key
+            yield node.key"""
 
 class STree3:
     def __init__(self, value):
@@ -111,7 +111,7 @@ class STree3:
             else:
                 self.right.insert(node)
 
-class PostOrderIterator():
+"""class PostOrderIterator():
     def __init__(self, current):
         self._current = current
     def __iter__(self):
@@ -122,28 +122,7 @@ class PostOrderIterator():
         for node in self._current.left:
             yield node.key
         for node in self._current.right:
-            yield node.key
-
-def pre_order_print(r):
-    if not r:
-        return
-    print(r.key)
-    pre_order_print(r.left)
-    pre_order_print(r.right)
-
-def in_order_print(r):
-    if not r:
-        return
-    in_order_print(r.left)
-    print(r.key)
-    in_order_print(r.right)
-
-def post_order_print(r):
-    if not r:
-        return
-    in_order_print(r.left)
-    in_order_print(r.right)
-    print(r.key)
+            yield node.key"""
 
 if __name__ == "__main__":
 
