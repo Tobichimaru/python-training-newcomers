@@ -1,32 +1,33 @@
 import time
-class DTimeAndSum():
-    def __init__(self):
-        def time_function(func):
-            def tm(*args, **kwargs):
-                t = time.clock()
-                res = func(*args,**kwargs)
-                print ("Время выполнения функции: %f" % (time.clock()-t))
-                return res
-            return tm
 
-        @time_function
-        def function(*nums):
-            sum = 0
-            for i in nums:
-                if isinstance(i, int):
-                    sum += i
-                else:
-                    try:
-                        i = int(i)
-                        sum += i
-                    except ValueError:
-                        print(str(i) + " не является числом")
-                        return
-            print("Sum: ", sum)
+def timeit(func):
+    def tm(*args, **kwargs):
+        t = time.clock()
+        res = func(*args, **kwargs)
+        print ("Время выполнения функции: %f" % (time.clock()-t))
+        return res
+    return tm
 
-        function(1, 2, 3, 4, 2, 1, 2, "23")
-        function(1, 2, 3, 4, 2, 1, 2, "23", "abd")
+@timeit
+def num_arg(*args, **kwargs):
+    def sum_arg(func):
+        s = 0
+        for i in args:
+                s += func(i)
+        for v in kwargs:
+                s += func(kwargs[v])
+        print("Sum: ", s)
+
+    @sum_arg
+    def test(h):
+        try:
+            h = int(h)
+            return h
+        except ValueError:
+            raise ValueError("At least one variable type cannot be converted to int")
 
 
-if __name__ == "__main__":
-    DTimeAndSum()
+k = num_arg(1, 2, 3, 4, 2, 1, 2, "23", 2, a = 2)
+g = num_arg(1, 2, 3, 4, 2, 1, 2, "23", "abd")
+
+print(k, g)
