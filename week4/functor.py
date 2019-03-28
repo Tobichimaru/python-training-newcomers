@@ -4,10 +4,8 @@ class Strip:
 
     def __call__(self, string):
         sp = string.split(" ")
-        new_massage = ""
-        for i in sp:
-            new_massage += " " + i.strip(self.characters)
-        return new_massage.strip(" ")
+        new_massage = " ".join(i.strip(self.characters) for i in sp)
+        return new_massage
 
 
 strip_punctuations = Strip(",;:.?!")
